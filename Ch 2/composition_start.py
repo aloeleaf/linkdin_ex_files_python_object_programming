@@ -3,18 +3,25 @@
 
 
 class Book:
-    def __init__(self, title, price, authorfname, authorlname):
+    def __init__(self, title, price, author=None):
         self.title = title
         self.price = price
 
-        self.authorfname = authorfname
-        self.authorlname = authorlname
-
+        self.autho = author
+        
         self.chapters = []
 
     def addchapter(self, name, pages):
         self.chapters.append((name, pages))
+    
 
+class Author:
+    def __init__(self, fname, lname):
+        self.fname = fname
+        self.lname = lname
+
+    def __srt_(self):
+        return f"{self.fname} {self.lname}"
 
 b1 = Book("War and Peace", 39.0, "Leo", "Tolstoy")
 
